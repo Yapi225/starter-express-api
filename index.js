@@ -13,7 +13,7 @@ const pool = new Pool({
 
 app.post('/Participant', async (req, res) => {
   const { nom, prenom, tel, email } = req.body;
-  const query = 'INSERT INTO Participant (nom, prenom, tel, email) VALUES ($1, $2, $3, $4)';
+  const query = 'INSERT INTO participants (nom, prenom, tel, email) VALUES ($1, $2, $3, $4)';
   const values = [nom, prenom, tel, email];
 
   try {
