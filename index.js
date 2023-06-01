@@ -26,7 +26,7 @@ app.post('/Participant', async (req, res) => {
 });
 
 app.get('/Participants', async (req, res) => {
-  const query = 'SELECT * FROM Participant';
+  const query = 'SELECT * FROM participants';
 
   try {
     const result = await pool.query(query);
