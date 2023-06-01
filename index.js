@@ -12,9 +12,9 @@ const pool = new Pool({
 });
 
 app.post('/Participant', async (req, res) => {
-  const { nom, prenoms, tel, email } = req.body;
-  const query = 'INSERT INTO Participant (nom, firstname, phone, email) VALUES ($1, $2, $3, $4)';
-  const values = [nom, prenoms, tel, email];
+  const { nom, prenom, tel, email } = req.body;
+  const query = 'INSERT INTO Participant (nom, prenom, tel, email) VALUES ($1, $2, $3, $4)';
+  const values = [nom, prenom, tel, email];
 
   try {
     await pool.query(query, values);
@@ -26,7 +26,7 @@ app.post('/Participant', async (req, res) => {
 });
 
 app.get('/Participants', async (req, res) => {
-  const query = 'SELECT * FROM Participants';
+  const query = 'SELECT * FROM Participant';
 
   try {
     const result = await pool.query(query);
